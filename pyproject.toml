@@ -11,7 +11,7 @@ requires = ["hatchling"]
 
 [tool.pixi.workspace]
 channels = ["conda-forge"]
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "osx-64", "win-64"]
 
 [tool.pixi.pypi-dependencies]
 visitors = { path = ".", editable = true }
@@ -20,3 +20,14 @@ visitors = { path = ".", editable = true }
 
 [tool.pixi.dependencies]
 pandas = ">=2.3.3,<3"
+pixi-pycharm = ">=0.0.10,<0.0.11"
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+test = { features = ["test"], solve-group = "default" }
+
+[tool.pixi.feature.test.tasks]
+test = "pytest"
+
+[dependency-groups]
+test = ["pytest"]
