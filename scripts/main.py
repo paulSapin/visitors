@@ -1,10 +1,4 @@
-from visitors import *
+from visitors import Calendar
 
-C = Candidate(
-    name='Tianhang Zhou',
-    email=None,
-    country='China',
-    profile=Category.PhD,
-    dates=None,
-    funding='Zhiyuan Honors Program (SJTU)'
-)
+C = Calendar()
+

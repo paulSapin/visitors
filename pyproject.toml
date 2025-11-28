@@ -1,6 +1,5 @@
 [project]
 authors = [{name = "Paul Sapin", email = "p.sapin@imperial.ac.uk"}]
-dependencies = []
 name = "visitors"
 requires-python = ">= 3.11"
 version = "0.1.0"
@@ -21,6 +20,8 @@ visitors = { path = ".", editable = true }
 [tool.pixi.dependencies]
 pandas = ">=2.3.3,<3"
 pixi-pycharm = ">=0.0.10,<0.0.11"
+pyyaml = ">=6.0.3,<7"
+python-dateutil = ">=2.9.0.post0,<3"
 
 [tool.pixi.environments]
 default = { solve-group = "default" }

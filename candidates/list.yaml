@@ -1,0 +1,29 @@
+Tianhang Zhou:
+  name: Tianhang Zhou
+  email: None
+  country: China
+  profile: PhD
+  startingDate: 2028-09-01
+  duration_months: 12
+  fundingSource: Zhiyuan Honors Program (SJTU)
+  progress:
+    Funding: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
+    Application: Not Started  # Not Started / Submitted / On Hold / Completed
+    Approval: Not Started   # Not Started / In Progress / On Hold / Completed
+    VISA: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
+    ATAS: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
+
+Yuhui Song:
+  name: Yuhui Song
+  email: yhsong23@163.com
+  country: China
+  profile: PhD
+  startingDate: 2025-11-01
+  duration_months: 12
+  fundingSource: China Scholarship Council (CSC)
+  progress:
+    Funding: Completed  # N/A OR Not Started / In Progress / On Hold / Completed
+    Application: Submitted  # Not Started / Submitted / On Hold / Completed
+    Approval: Completed   # Not Started / In Progress / On Hold / Completed
+    VISA: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
+    ATAS: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
