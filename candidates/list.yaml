@@ -27,3 +27,18 @@ Yuhui Song:
     Approval: Completed   # Not Started / In Progress / On Hold / Completed
     VISA: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
     ATAS: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
+
+Yonggao Yin:
+  name: Yonggao Yin
+  email: y.yin@seu.edu.cn
+  country: China
+  profile: Academic
+  startingDate: 2025-12-30
+  duration_months: 3
+  fundingSource: Southeast University, Nanjing, China
+  progress:
+    Funding: Completed  # N/A OR Not Started / In Progress / On Hold / Completed
+    Application: Not Started  # Not Started / Submitted / On Hold / Completed
+    Approval: Not Started   # Not Started / In Progress / On Hold / Completed
+    VISA: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
+    ATAS: Not Started  # N/A OR Not Started / In Progress / On Hold / Completed
