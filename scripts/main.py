@@ -1,11 +1,16 @@
 import calendar
 from datetime import date
+from visitors import *
 
 events = {
     date(2025, 3, 5): "Project deadline",
     date(2025, 3, 12): "Team meeting",
     date(2025, 3, 25): "Conference",
 }
+
+
+C = Calendar()
+
 
 class EventHTMLCalendar(calendar.HTMLCalendar):
 
@@ -24,10 +29,10 @@ class EventHTMLCalendar(calendar.HTMLCalendar):
         else:
             return f"<td>{day}</td>"
 
-    def formatmonth(self, year, month, withyear=True):
+    def formatmonth(self, year, month, with_year=True):
         # Override to pass year & month to formatday
         cal = '<table border="1" cellpadding="4" cellspacing="0">\n'
-        cal += f"{self.formatmonthname(year, month, withyear=withyear)}\n"
+        cal += f"{self.formatmonthname(year, month, withyear=with_year)}\n"
         cal += f"{self.formatweekheader()}\n"
         for week in self.monthdays2calendar(year, month):
             cal += "<tr>"
@@ -36,6 +41,7 @@ class EventHTMLCalendar(calendar.HTMLCalendar):
             cal += "</tr>\n"
         cal += "</table>"
         return cal
+
 
 year = 2025
 month = 3
@@ -65,5 +71,4 @@ with open("calendar.html", "w", encoding="utf-8") as f:
 print("Open calendar.html in your browser.")
 
 text_calendar = calendar.TextCalendar()
-
 text_calendar.pryear(2025)

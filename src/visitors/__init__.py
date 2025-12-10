@@ -2,6 +2,7 @@ from enum import Enum
 from dateutil.relativedelta import relativedelta
 import yaml
 
+
 def hello():
     return "Hello"
 
@@ -45,8 +46,7 @@ class Candidate:
              'Funding Source': candidate['fundingSource'],
              'Start Date': candidate['startingDate'],
              'End Date': endDate,
-             'Duration': f'{candidate['duration_months']} months',
-            }
+             'Duration': f'{candidate["duration_months"]} months'}
 
         # Recap progress
         fees = f"{round(duration_months * 6000 / 12)} £ to be paid 1 month before end of stay (email Viji)"
@@ -67,7 +67,7 @@ class Candidate:
                 return False
             else:
                 return True
-        elif self.info['Profile'] in [ Category.PhD, Category.Honorary, Category.Academic]:
+        elif self.info['Profile'] in [Category.PhD, Category.Honorary, Category.Academic]:
             return True
         else:
             return None
