@@ -1,3 +1,4 @@
+import calendar
 from enum import Enum
 from dateutil.relativedelta import relativedelta
 import yaml
@@ -35,25 +36,34 @@ class Candidate:
 
         # Compute end date
         duration_months = candidate['duration_months']
-        endDate = candidate['startingDate'] + relativedelta(months=candidate['duration_months'])
+        if candidate['startingDate'] is not None and duration_months is not None:
+            endDate = candidate['startingDate'] + relativedelta(months=candidate['duration_months'])
+        else:
+            endDate = None
 
         # Register info
         self.info = \
             {'Name': candidate['name'],
              'Country': candidate['country'],
+             'Nationality': candidate['nationality'],
              'Email': candidate['email'],
              'Profile': profile,
              'Funding Source': candidate['fundingSource'],
              'Start Date': candidate['startingDate'],
              'End Date': endDate,
-             'Duration': f'{candidate["duration_months"]} months'}
+             'Duration': f'{candidate["duration_months"]} months',
+             'Bench Fee Exemption': candidate['benchFeeExemption'],
+             '"1+1" Rule Exemption': candidate['1p1RuleExemption']}
 
         # Recap progress
-        fees = f"{round(duration_months * 6000 / 12)} £ to be paid 1 month before end of stay (email Viji)"
+        if duration_months is not None:
+            fees = f"{round(duration_months * 6000 / 12)} £ to be paid 1 month before end of stay (email Viji)"
+        else:
+            fees = "Will be determined once duration is set"
         self.progress = {
             'Funding': candidate['progress']['Funding'] if self.info['Funding Source'] is not None else 'N/A',
-            'Application': candidate['progress']['Application'],
             'Approval': candidate['progress']['Approval'],
+            'Application': candidate['progress']['Application'],
             'ATAS': candidate['progress']['ATAS'] if self.needATAS() else 'N/A',
             'VISA': candidate['progress']['VISA'],
             'Fees': fees if self.benchFees() else None}
@@ -68,7 +78,7 @@ class Candidate:
             else:
                 return True
         elif self.info['Profile'] in [Category.PhD, Category.Honorary, Category.Academic]:
-            return True
+            return False if self.info['Bench Fee Exemption'] else True
         else:
             return None
 
@@ -118,7 +128,7 @@ class Candidate:
             "South Korea",
             "United States of America", "United States", "USA"
         ]
-        return False if self.info['Country'] in atas_exempt_countries else True
+        return False if self.info['Nationality'] in atas_exempt_countries else True
 
     def getApprovalFrom(self):
 
@@ -136,14 +146,14 @@ class Candidate:
     def applyVia(self):
 
         if self.info['Profile'] in [Category.Undergraduate, Category.Master, Category.PhD]:
-            return "MyImperial (online)"
+            return "MyImperial (https://myimperial.powerappsportals.com/)"
         elif self.info['Profile'] in [Category.Honorary, Category.Academic]:
             return "Leah Grey (A&SM)"
         else:
             return None
 
 
-class Calendar:
+class ListCandidates:
 
     def __init__(self):
 
@@ -153,3 +163,10 @@ class Calendar:
         self.candidates = {}
         for candidate in list_of_candidates:
             self.candidates[candidate] = Candidate(list_of_candidates[candidate])
+
+
+class Schedule:
+
+    def __init__(self):
+
+        self.listCandidates = ListCandidates()
