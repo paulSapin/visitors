@@ -27,8 +27,8 @@ events = [
     }
 ]
 
-def displaySchedule(year: int):
 
+def displaySchedule(year: int):
 
     # ---- 2. Utility to iterate dates ----
     def daterange(start_date, end_date):
@@ -137,4 +137,6 @@ def displaySchedule(year: int):
     plt.tight_layout()
     plt.show()
 
+
 displaySchedule(year=2027)
+plt.show()

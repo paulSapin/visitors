@@ -26,6 +26,7 @@ matplotlib = ">=3.10.8,<4"
 
 [tool.pixi.environments]
 default = { solve-group = "default" }
+visitors = { solve-group = "default" }
 test = { features = ["test"], solve-group = "default" }
 
 [tool.pixi.feature.test.tasks]
