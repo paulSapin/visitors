@@ -3,6 +3,7 @@ import calendar
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
+print('Hello')
 
 # ---- 1. Define events ----
 # Each event: title, start_date, end_date (inclusive)
