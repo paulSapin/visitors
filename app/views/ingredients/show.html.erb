@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ingredient.name %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @ingredient.unit %>
+</p>
+
+<p>
+  <strong>Stock max:</strong>
+  <%= @ingredient.stock_max %>
+</p>
+
+<p>
+  <strong>Stock min threshold:</strong>
+  <%= @ingredient.stock_min_threshold %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @ingredient.stock %>
+</p>
+
+<p>
+  <strong>External:</strong>
+  <%= @ingredient.external_id %>
+</p>
+
+<p>
+  <strong>Material type:</strong>
+  <%= @ingredient.material_type %>
+</p>
+
+<p>
+  <strong>Active or excipient:</strong>
+  <%= @ingredient.active_or_excipient %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @ingredient.description %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @ingredient.created_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @ingredient.updated_by %>
+</p>
+
+<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Back', ingredients_path %>

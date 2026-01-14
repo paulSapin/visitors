@@ -1,0 +1,29 @@
+<%= simple_form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :name, label: 'Nombre del Producto', autofocus: true %>
+  <!--
+  <%= f.input :package, label: 'Presentación', collection: ["ISSTE","IMSS", "Privado", "Farmacias del Ahorro"] %>
+-->
+
+  <%= f.input :shape, label: 'Forma', collection: ["Tableta","Capsula"] %>
+  <%= f.input :unit, label: 'Unidad', collection: ["mg", "gr"] %>
+  <%= f.input :number_of_blisters_per_box, label: 'Número de blisters por caja', as: :integer %>
+  <%= f.input :number_of_units_per_blister, label: 'Número de unidades por blister', as: :integer %>
+
+
+  <div class="actions">
+    <%= f.submit 'Guardar' %>
+  </div>
+<% end %>
+

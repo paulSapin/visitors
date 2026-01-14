@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>Listado de productos</h2>
+ 
+  <a href="/products/new" class="btn btn-default" role="button">Nuevo producto</a>
+
+  <br><br>
+  
+
+  <!-- Index de productos -->
+  <div class="panel panel-default">
+  
+    <!-- Table -->
+    <table class="table">
+      <tr>
+        <th>Producto</th>
+        <!-- <th>Stock</th> -->
+      </tr>
+
+      <% @products.each do |product| %>
+        <tr>
+          <td><a href="/products/<%= product.id %>"><%= product.name %> | <%= product.package %></a></td>
+          <td>
+            <!-- Stock
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% Stock
+              </div> 
+            -->
+            </div> 
+          </td>
+          <% if current_user.role == 'admin' %>
+            <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+          
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+

@@ -1,0 +1,29 @@
+<%= simple_form_for(@component) do |f| %>
+<% if @component.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@component.errors.count, "error") %> prohibited this component from being saved:</h2>
+
+      <ul>
+      <% @component.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
+  <%= @product_id %>
+
+  <div class="form-inputs">
+
+    <%= f.input :product_id, collection: Product.all, required: true, :as => :hidden %>
+
+    <%= f.input :ingredient_id, label: 'Material', collection: Ingredient.all, required: true %>
+    <%= f.input :qty, label: 'Cantidad requeridad para fabricar una pieza', required: true %>
+
+ 
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Guardar' %>
+  </div>
+<% end %>

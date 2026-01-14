@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  package: MyString
+  average_weigth: 1
+  unit: MyString
+  stock: 1
+  number_of_blisters_per_box: 1
+  number_of_units_per_blister: 1
+  max_units_to_produce: 1
+  production_limited_by: MyString
+  shape: MyString
+  created_by: 1
+  updated_by: 1
+
+two:
+  name: MyString
+  description: MyText
+  package: MyString
+  average_weigth: 1
+  unit: MyString
+  stock: 1
+  number_of_blisters_per_box: 1
+  number_of_units_per_blister: 1
+  max_units_to_produce: 1
+  production_limited_by: MyString
+  shape: MyString
+  created_by: 1
+  updated_by: 1
